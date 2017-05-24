@@ -9,6 +9,14 @@ class Animals():
         self.title = Label(master, text = "Animal Fight Club!", font = self.title_font, bg = "lightgreen", fg = "darkgreen")
         self.title.grid(row=1, column=1, columnspan=10)
 
+        '''
+        # Add animations
+        self.animation1 = PhotoImage(file = "giphy.gif")
+        self.animation1.grid(row = 2, column = 1, columnspan = 2)
+        self.animation2 = PhotoImage(file = "giphy-1.gif")
+        self.animation2.grid(row = 2, column =2, columnspan = 2)
+        '''
+
         #Animal Display
         self.animal1_font = font.Font(family = "Courier New", size = 15, weight = font.NORMAL)
         self.animal1 = Label(master, text = "First Animal", fg = "darkgreen")
@@ -18,14 +26,12 @@ class Animals():
         self.animal2 = Label(master, text = "Second Animal", fg = "darkgreen")
         self.animal2.grid(row = 5, column = 3, columnspan = 2)
 
-        #Add animations
 
         #Question
         self.guess = Label(master, text = "Who will come out on top?")
         self.guess.grid(row = 6, column = 1, columnspan = 2)
 
         #User predicts a winner
-
         self.winner1_button = font.Font(family = "Courier New", size = 15, weight = font.NORMAL)
         self.winner1_button = Button(master, text = "animal1_name")
         self.winner1_button.grid(row = 6, column = 3)
@@ -35,7 +41,7 @@ class Animals():
 
         #Fight button
         self.fight_button = font.Font(family = "Courier New", size = 15, weight = font.BOLD)
-        self.fight_button = Button(master, text = "FIGHT!")
+        self.fight_button = Button(master, text = "FIGHT!", fg = "purple")
         self.fight_button.grid(row = 7, column = 3, columnspan = 2)
 
         #List of winner and stats
@@ -47,8 +53,9 @@ class Animals():
         self.restart_button = Button(master, text = "Play Again")
         self.restart_button.grid(row = 8, column = 4)
 
-    #def fight_button_click(self):
+    #def animal_choice_click(self):
 
+    #def fight_button_click(self):
 
 
 if __name__ == "__main__":

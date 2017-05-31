@@ -57,6 +57,9 @@ class Animals():
 
     #def fight_button_click(self):
 
+    #def play_again_button(self):
+
+
 
 if __name__ == "__main__":
     root = Tk()

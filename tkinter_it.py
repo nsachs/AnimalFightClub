@@ -1,9 +1,13 @@
 from tkinter import *
 from tkinter import font
-
+import csv
 import random
 
-animal_list = [["Gorilla",1],["Bear",2],["Cat",3],["Rhino",4]]
+file = open("fighting.py", "r")
+animal_list = []
+reader = csv.reader(file, delimiter = ",")
+
+print(animal_list)
 
 class Animals():
     def __init__(self,master):

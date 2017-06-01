@@ -27,3 +27,49 @@ def post_score(score):
 if __name__ == '__main__':
     post_score(40)
     get_scores()
+
+
+##########################################################################################
+# The google script associated with the spreadsheet is pasted below for further reference.
+"""
+
+function doGet(e) {
+  
+  if(typeof e !== 'undefined')
+    var data = JSON.parse(JSON.stringify(e.parameter))
+    if(data.type == 'fetch')
+      return ContentService.createTextOutput(dumpData());
+    if(data.type == 'post')
+      addRow([data.score]) // [col1, col2, col3, col4 ...]
+      return ContentService.createTextOutput("Score of " + data.score + " added to saved scores.");
+    return ContentService.createTextOutput("Not a valid request.");
+}
+
+function addRow(e) {
+  var sheet = SpreadsheetApp.getActiveSheet();
+  sheet.appendRow(e);
+}
+
+function dumpData() {
+  var sheet = SpreadsheetApp.getActiveSheet();
+  var data = sheet.getDataRange().getValues();
+  var out = []
+  for (var i = 1; i < data.length; i++) {
+    out.push(JSON.stringify({score: data[i][0]}));
+  }
+  return out
+}
+
+"https://script.google.com/macros/s/AKfycbzAHgTwxYYtFoMwzyXovL_IUbt62R4hBeoew1wUY4tU/exec?name=labnol&blog=ctrlq&type=get"
+
+/*
+
+
+
+type = fetch, post
+score = value
+
+
+
+*/
+"""

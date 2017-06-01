@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import font
+
 import random
 
 animal_list = [["Gorilla",1],["Bear",2],["Cat",3],["Rhino",4]]

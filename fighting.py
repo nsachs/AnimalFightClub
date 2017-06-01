@@ -1,6 +1,4 @@
-animal_list = ['bear', 'lion', 'wolverine', 'alligator', 'black cat', 'cobra', 'dog', 'porcupine', 'gorilla', 'lion',
-               'black panther', 'elephant', 'giraffe', 'rhino', 'bull', 'human', 'T-rex']
-
+import random
 
 class Animal():
     def __init__(self):
@@ -253,14 +251,29 @@ class T_rex(Animal):
         self.intelligence = random.randrange(38, 45)
         self.critical = random.randrange(80, 85)
 
+bear = Bear()
+lion = Lion()
+wolverine = Wolverine()
+alligator = Alligator()
+black_cat = Black_cat()
+cobra = Cobra()
+dog = Dog()
+porcupine = Porcupine()
+gorilla = Gorilla()
+black_panther = Black_panther()
+elephant = Elephant()
+giraffe = Giraffe()
+rhino = Rhino()
+bull = Bull()
+human = Human()
+t_rex = T_rex()
+
+animal_list = [['bear', bear], ['lion',lion], ['wolverine', wolverine], ['alligator', alligator], ['black cat', black_cat], ['cobra', cobra], ['dog', dog], ['porcupine', porcupine], ['gorilla', gorilla],
+               ["black panther", black_panther], ['elephant', elephant], ['giraffe', giraffe], ['rhino',rhino], ['bull',bull], ['human',human], ['T-rex',t_rex]]
 
 animal = Animal()
 
 import random
-
-lion = Lion()
-
-bear = Bear()
 
 turn = 100
 

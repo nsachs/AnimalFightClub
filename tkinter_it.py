@@ -29,11 +29,11 @@ class Animals():
 
         #Animal Display
         self.animal1_font = font.Font(family = "Courier New", size = 15, weight = font.NORMAL)
-        self.animal1 = Label(master, text = animal1, fg = "darkgreen")
+        self.animal1 = Label(master, text = animal1[0], fg = "darkgreen")
         self.animal1.grid(row = 5, column = 1, columnspan = 2)
 
         self.animal2_font = font.Font(family = "Courier New", size = 15, weight = font.NORMAL)
-        self.animal2 = Label(master, text = animal2, fg = "darkgreen")
+        self.animal2 = Label(master, text = animal2[0], fg = "darkgreen")
         self.animal2.grid(row = 5, column = 3, columnspan = 2)
 
 
@@ -43,10 +43,10 @@ class Animals():
         v = StringVar()
         #User predicts a winner/send prediction back
         self.winner1_button = font.Font(family = "Courier New", size = 15, weight = font.NORMAL)
-        self.winner1_button = Button(master, text = animal1)
+        self.winner1_button = Button(master, text = animal1[0])
         self.winner1_button.grid(row = 6, column = 3)
         self.winner2_button = font.Font(family = "Courier New", size = 15, weight = font.NORMAL)
-        self.winner2_button = Button(master, text = animal2)
+        self.winner2_button = Button(master, text = animal2[0])
         self.winner2_button.grid(row = 6, column = 4)
         if self.winner1_button == True:
             user_winner = animal_1[0]
@@ -55,10 +55,10 @@ class Animals():
 
         #Fight button/send fight
         self.fight_button = font.Font(family = "Courier New", size = 15, weight = font.BOLD)
-        self.fight_button = Button(master, text = "FIGHT!", fg = "purple")
+        self.fight_button = Button(master, text = "FIGHT!", fg = "purple", command = lambda:take_turn(animal1[1], animal2[1]))
         self.fight_button.grid(row = 7, column = 3, columnspan = 2)
 
-        #send to Tom + Austin
+
 
         '''
         if animal_1[1] > animal_2[1]:
@@ -66,20 +66,15 @@ class Animals():
         else:
             winner = animal_2[0]
         '''
-       
+
         #List of winner and stats/ grab stats and winner
-        self.victor = Label(master, text = "You are correct!  " + take_turn(animal1, animal2) + " Wins!")
+        self.victor = Label(master, text = "You are correct!  " + str(take_turn(animal1[1], animal2[1])) + " Wins!")
         self.victor.grid(row = 8, column = 1, columnspan = 3)
 
         #Play again button
         self.restart_button = font.Font(family = "Courier New", size = 15, weight = font.NORMAL)
         self.restart_button = Button(master, text = "Play Again")
         self.restart_button.grid(row = 8, column = 4)
-
-
-animal_list = ['bear', 'lion', 'wolverine', 'alligator', 'black cat', 'cobra', 'dog', 'porcupine', 'gorilla', 'lion',
-               'black panther', 'elephant', 'giraffe', 'rhino', 'bull', 'human', 'T-rex']
-
 
 if __name__ == "__main__":
     root = Tk()

@@ -1,51 +1,40 @@
 import tkinter as tk
+from PIL import ImageTk, Image
 import time
+from tkinter import *
 
-root=tk.Tk()
-canvas=tk.Canvas(root,width=400,height=400)
-canvas.pack()
-circle=canvas.create_oval(50,50,80,80,outline="white",fill="blue")
+root = Tk()
 
-def redraw():
-   canvas.after(100,redraw)
-   canvas.move(circle,5,5)
-   canvas.update()
-canvas.after(100,redraw)
-root.mainloop()
 
-class Alien(object):
-    def __init__(self, canvas, *args, **kwargs):
-        self.canvas = canvas
-        self.id = canvas.create_oval(*args, **kwargs)
-        self.vx = 5
-        self.vy = 0
+def mainfunction():
+    imagelist = ["7-2-bear-png-3_gif_png_gif.gif", "Bear-PNG-5.gif"]
 
-    def move(self):
-        x1, y1, x2, y2 = self.canvas.bbox(self.id)
-        if x2 > 400:
-            self.vx = -5
-        if x1 < 0:
-            self.vx = 5
-        self.canvas.move(self.id, self.vx, self.vy)
+    photo = PhotoImage(file=imagelist[0])
+    width = 900
+    height = 900
+    canvas = Canvas(width=width, height=height)
+    canvas.pack()
+    widthrect = 200
+    number = 100
+    moveimg = -40
+    giflist = []
+    for imagefile in imagelist:
+        photo = PhotoImage(file=imagefile)
+        giflist.append(photo)
 
-class App(object):
-    def __init__(self, master, **kwargs):
-        self.master = master
-        self.canvas = tk.Canvas(self.master, width=400, height=400)
-        self.canvas.pack()
-        self.aliens = [
-            Alien(self.canvas, 20, 260, 120, 360,
-                  outline='white', fill='blue'),
-            Alien(self.canvas, 2, 2, 40, 40, outline='white', fill='red'),
-        ]
-        self.canvas.pack()
-        self.master.after(0, self.animation)
+    for k in range(1000):
+        for gif in giflist:
+            canvas.delete(ALL)
+            x = canvas.create_rectangle(0, 65, widthrect, 25, fill="red")
+            canvas.create_text(20, 50, fill="orange", font="Times 20 italic bold",
+                               text=str(number))
+            canvas.create_image(width / 6.0 + moveimg, height / 2.0, image=gif)
+            canvas.move(x, 6, 0)
+            root.after(40)
+            widthrect -= 4
+            number -= 2
+            moveimg *= -1
+            canvas.update()
+            time.sleep(0.7)
 
-    def animation(self):
-        for alien in self.aliens:
-            alien.move()
-        self.master.after(12, self.animation)
-
-root = tk.Tk()
-app = App(root)
-root.mainloop()
+    root.mainloop()

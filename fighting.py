@@ -47,7 +47,7 @@ class Wolverine(Animal):
         super().__init__()
         self.turn = 0
         self.score = 0
-        self.size = random.randrange()
+        self.size = random.randrange(58,63)
         self.speed = random.randrange(40, 48)
         self.health = 100
         self.strength = random.randrange(80, 85)

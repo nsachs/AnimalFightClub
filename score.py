@@ -18,10 +18,11 @@ def get_scores():
     """
     Get the scores and output a list of all scores and names in dictionary form
     like this [{name:name1, score:score1},{name:name2, score:score2}, ... ]
+    it is SORTED by SCORE
     :return: a dictionary of scores which are previously saved
     """
     with request.urlopen(url + "type=fetch") as response:
-        return eval(response.read())
+        return sorted(eval(response.read()), key=lambda k: k['score'])
 
 
 def post_score(score, name):

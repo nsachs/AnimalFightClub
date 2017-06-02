@@ -1,8 +1,8 @@
 from tkinter import *
 from tkinter import font
 import csv
-import random
 
+import random
 from fighting import *
 
 class Animals():
@@ -20,7 +20,7 @@ class Animals():
         self.title.grid(row=1, column=1, columnspan=10)
 
         '''
-        # Add animations
+        Add animations
         self.animation1 = PhotoImage(file = "giphy.gif")
         self.animation1.grid(row = 2, column = 1, columnspan = 2)
         self.animation2 = PhotoImage(file = "giphy-1.gif")
@@ -41,6 +41,7 @@ class Animals():
         self.guess = Label(master, text = "Who will come out on top?")
         self.guess.grid(row = 6, column = 1, columnspan = 2)
         v = StringVar()
+
         #User predicts a winner/send prediction back
         self.winner1_button = font.Font(family = "Courier New", size = 15, weight = font.NORMAL)
         self.winner1_button = Button(master, text = animal1[0])
@@ -58,12 +59,12 @@ class Animals():
         self.fight_button = Button(master, text = "FIGHT!", fg = "purple", command = lambda:fighting(animal1[1], animal2[1]))
         self.fight_button.grid(row = 7, column = 3, columnspan = 2)
 
-
         '''
         if animal_1[1] > animal_2[1]:
             winner = animal_1[0]
         else:
             winner = animal_2[0]
+            
         '''
         winner = ""
 

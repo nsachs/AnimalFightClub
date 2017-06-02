@@ -23,8 +23,8 @@ def get_scores():
     """
     with request.urlopen(url + "type=fetch") as response:
         out = sorted(eval(response.read()), key=lambda k: k['score'])
-        out.reverse()
-        return out
+    out.reverse()
+    return out
 
 
 def post_score(score, name):

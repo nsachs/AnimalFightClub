@@ -3,20 +3,16 @@ from tkinter import font
 import csv
 import random
 
-file = open("fighting.py", "r")
-animal_list = []
-reader = csv.reader(file, delimiter = ",")
-
-print(animal_list)
+from fighting import *
 
 class Animals():
     def __init__(self,master):
-        animal1 = random.randrange(len(animal_list))
-        animal_1 = animal_list[animal1]
-        del(animal_list[animal1])
-        animal2 = random.randrange(len(animal_list))
-        animal_2 = animal_list[animal2]
-        del(animal_list[animal2])
+        animal_1 = random.randrange(len(animal_list))
+        animal1 = animal_list[animal_1]
+        #del(animal_list[animal_1])
+        animal_2 = random.randrange(len(animal_list))
+        animal2 = animal_list[animal_2]
+        #del(animal_list[animal2])
 
         #Title
         self.title_font = font.Font(family="Courier New", size=30, weight = font.BOLD, underline = 2)
@@ -33,11 +29,11 @@ class Animals():
 
         #Animal Display
         self.animal1_font = font.Font(family = "Courier New", size = 15, weight = font.NORMAL)
-        self.animal1 = Label(master, text = animal_1[0], fg = "darkgreen")
+        self.animal1 = Label(master, text = animal1[0], fg = "darkgreen")
         self.animal1.grid(row = 5, column = 1, columnspan = 2)
 
         self.animal2_font = font.Font(family = "Courier New", size = 15, weight = font.NORMAL)
-        self.animal2 = Label(master, text = animal_2[0], fg = "darkgreen")
+        self.animal2 = Label(master, text = animal2[0], fg = "darkgreen")
         self.animal2.grid(row = 5, column = 3, columnspan = 2)
 
 
@@ -47,10 +43,10 @@ class Animals():
         v = StringVar()
         #User predicts a winner/send prediction back
         self.winner1_button = font.Font(family = "Courier New", size = 15, weight = font.NORMAL)
-        self.winner1_button = Radiobutton(master, text = animal_1[0], variable = v, value = 1).deselect()
+        self.winner1_button = Button(master, text = animal1[0])
         self.winner1_button.grid(row = 6, column = 3)
         self.winner2_button = font.Font(family = "Courier New", size = 15, weight = font.NORMAL)
-        self.winner2_button = Radiobutton(master, text = animal_2[0], variable = v, value =2).deselect()
+        self.winner2_button = Button(master, text = animal2[0])
         self.winner2_button.grid(row = 6, column = 4)
         if self.winner1_button == True:
             user_winner = animal_1[0]
@@ -59,18 +55,20 @@ class Animals():
 
         #Fight button/send fight
         self.fight_button = font.Font(family = "Courier New", size = 15, weight = font.BOLD)
-        self.fight_button = Button(master, text = "FIGHT!", fg = "purple")
+        self.fight_button = Button(master, text = "FIGHT!", fg = "purple", command = lambda:fighting(animal1[1], animal2[1]))
         self.fight_button.grid(row = 7, column = 3, columnspan = 2)
 
-        #send to Tom + Austin
 
+        '''
         if animal_1[1] > animal_2[1]:
             winner = animal_1[0]
         else:
             winner = animal_2[0]
+        '''
+        winner = ""
 
         #List of winner and stats/ grab stats and winner
-        self.victor = Label(master, text = "You are correct!  " + winner + " Wins!")
+        self.victor = Label(master, text = winner)
         self.victor.grid(row = 8, column = 1, columnspan = 3)
 
         #Play again button
@@ -78,13 +76,8 @@ class Animals():
         self.restart_button = Button(master, text = "Play Again")
         self.restart_button.grid(row = 8, column = 4)
 
-    #def animal_choice_click(self):
-
-    #def fight_button_click(self):
-        #fight()
-
-    #def play_again_button(self):
-
+        def fighting(animal1, animal2):
+            winner = "You are correct" + take_turn(animal1[1], animal2[1]) + "Wins!"
 
 
 if __name__ == "__main__":

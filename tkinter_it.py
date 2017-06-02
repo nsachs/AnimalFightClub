@@ -55,9 +55,8 @@ class Animals():
 
         #Fight button/send fight
         self.fight_button = font.Font(family = "Courier New", size = 15, weight = font.BOLD)
-        self.fight_button = Button(master, text = "FIGHT!", fg = "purple", command = lambda:take_turn(animal1[1], animal2[1]))
+        self.fight_button = Button(master, text = "FIGHT!", fg = "purple", command = lambda:fighting(animal1[1], animal2[1]))
         self.fight_button.grid(row = 7, column = 3, columnspan = 2)
-
 
 
         '''
@@ -66,15 +65,20 @@ class Animals():
         else:
             winner = animal_2[0]
         '''
+        winner = ""
 
         #List of winner and stats/ grab stats and winner
-        self.victor = Label(master, text = "You are correct!  " + str(take_turn(animal1[1], animal2[1])) + " Wins!")
+        self.victor = Label(master, text = winner)
         self.victor.grid(row = 8, column = 1, columnspan = 3)
 
         #Play again button
         self.restart_button = font.Font(family = "Courier New", size = 15, weight = font.NORMAL)
         self.restart_button = Button(master, text = "Play Again")
         self.restart_button.grid(row = 8, column = 4)
+
+        def fighting(animal1, animal2):
+            winner = "You are correct" + take_turn(animal1[1], animal2[1]) + "Wins!"
+
 
 if __name__ == "__main__":
     root = Tk()

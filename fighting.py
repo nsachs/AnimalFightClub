@@ -3,6 +3,7 @@ import random
 class Animal():
     def __init__(self):
         self.size = ''
+        self.name = ''
         self.speed = ''
         self.health = ''
         self.strength = ''
@@ -16,6 +17,7 @@ class Bear(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
+        self.name = "bear"
         self.score = 0
         self.size = random.randrange(68, 78)
         self.speed = random.randrange(40, 50)
@@ -31,6 +33,7 @@ class Lion(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
+        self.name = "lion"
         self.score = 0
         self.size = random.randrange(62, 72)
         self.speed = random.randrange(95, 100)
@@ -46,6 +49,7 @@ class Wolverine(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
+        self.name = "wolverine"
         self.score = 0
         self.size = random.randrange(58,63)
         self.speed = random.randrange(40, 48)
@@ -61,6 +65,7 @@ class Alligator(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
+        self.name = "alligator"
         self.score = 0
         self.size = random.randrange(50, 60)
         self.speed = random.randrange(18, 28)
@@ -76,6 +81,7 @@ class Black_cat(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
+        self.name = "black_cat"
         self.score = 0
         self.size = random.randrange(40, 47)
         self.speed = random.randrange(40, 48)
@@ -91,6 +97,7 @@ class Dog(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
+        self.name = "dog"
         self.score = 0
         self.size = random.randrange(60, 65)
         self.speed = random.randrange(40, 65)
@@ -106,6 +113,7 @@ class Porcupine(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
+        self.name = "porcupine"
         self.score = 0
         self.size = random.randrange(60, 65)
         self.speed = random.randrange(15, 25)
@@ -121,6 +129,7 @@ class Gorilla(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
+        self.name = "gorilla"
         self.score = 0
         self.size = random.randrange(68, 78)
         self.speed = random.randrange(42, 49)
@@ -135,6 +144,7 @@ class Black_panther(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
+        self.name = "black_panther"
         self.score = 0
         self.size = random.randrange(55, 65)
         self.speed = random.randrange(97,100)
@@ -150,6 +160,7 @@ class Elephant(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
+        self.name = "elephant"
         self.score = 0
         self.size = random.randrange(84, 94)
         self.speed = random.randrange(50, 58)
@@ -165,6 +176,7 @@ class Giraffe(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
+        self.name = "giraffe"
         self.score = 0
         self.size = random.randrange(55, 65)
         self.speed = random.randrange(35, 43)
@@ -180,6 +192,7 @@ class Rhino(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
+        self.name = "rhino"
         self.score = 0
         self.size = random.randrange(75, 85)
         self.speed = random.randrange(39, 49)
@@ -195,6 +208,7 @@ class Bull(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
+        self.name = "bull"
         self.score = 0
         self.size = random.randrange(80, 89)
         self.speed = random.randrange(80, 89)
@@ -210,6 +224,7 @@ class Human(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
+        self.name = "human"
         self.score = 0
         self.size = random.randrange(35, 45)
         self.speed = random.randrange(35, 50)
@@ -225,6 +240,7 @@ class Cobra(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
+        self.name = "cobra"
         self.score = 0
         self.size = random.randrange(60, 65)
         self.speed = random.randrange(25, 35)
@@ -240,6 +256,7 @@ class T_rex(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
+        self.name = "t-rex"
         self.score = 0
         self.size = random.randrange(90, 100)
         self.speed = random.randrange(65, 75)

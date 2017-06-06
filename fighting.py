@@ -17,7 +17,7 @@ class Bear(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
-        self.name = "bear"
+        self.name = "Bear"
         self.score = 0
         self.size = random.randrange(68, 78)
         self.speed = random.randrange(40, 50)
@@ -33,7 +33,7 @@ class Lion(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
-        self.name = "lion"
+        self.name = "Lion"
         self.score = 0
         self.size = random.randrange(62, 72)
         self.speed = random.randrange(95, 100)
@@ -49,7 +49,7 @@ class Wolverine(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
-        self.name = "wolverine"
+        self.name = "Wolverine"
         self.score = 0
         self.size = random.randrange(58,63)
         self.speed = random.randrange(40, 48)
@@ -65,7 +65,7 @@ class Alligator(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
-        self.name = "alligator"
+        self.name = "Alligator"
         self.score = 0
         self.size = random.randrange(50, 60)
         self.speed = random.randrange(18, 28)
@@ -81,7 +81,7 @@ class Black_cat(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
-        self.name = "black_cat"
+        self.name = "Black_Cat"
         self.score = 0
         self.size = random.randrange(40, 47)
         self.speed = random.randrange(40, 48)
@@ -97,7 +97,7 @@ class Dog(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
-        self.name = "dog"
+        self.name = "Dog"
         self.score = 0
         self.size = random.randrange(60, 65)
         self.speed = random.randrange(40, 65)
@@ -113,7 +113,7 @@ class Porcupine(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
-        self.name = "porcupine"
+        self.name = "Porcupine"
         self.score = 0
         self.size = random.randrange(60, 65)
         self.speed = random.randrange(15, 25)
@@ -129,7 +129,7 @@ class Gorilla(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
-        self.name = "gorilla"
+        self.name = "Gorilla"
         self.score = 0
         self.size = random.randrange(68, 78)
         self.speed = random.randrange(42, 49)
@@ -144,7 +144,7 @@ class Black_panther(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
-        self.name = "black_panther"
+        self.name = "Black_panther"
         self.score = 0
         self.size = random.randrange(55, 65)
         self.speed = random.randrange(97,100)
@@ -160,7 +160,7 @@ class Elephant(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
-        self.name = "elephant"
+        self.name = "Elephant"
         self.score = 0
         self.size = random.randrange(84, 94)
         self.speed = random.randrange(50, 58)
@@ -176,7 +176,7 @@ class Giraffe(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
-        self.name = "giraffe"
+        self.name = "Giraffe"
         self.score = 0
         self.size = random.randrange(55, 65)
         self.speed = random.randrange(35, 43)
@@ -192,7 +192,7 @@ class Rhino(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
-        self.name = "rhino"
+        self.name = "Rhino"
         self.score = 0
         self.size = random.randrange(75, 85)
         self.speed = random.randrange(39, 49)
@@ -208,7 +208,7 @@ class Bull(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
-        self.name = "bull"
+        self.name = "Bull"
         self.score = 0
         self.size = random.randrange(80, 89)
         self.speed = random.randrange(80, 89)
@@ -224,7 +224,7 @@ class Human(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
-        self.name = "human"
+        self.name = "Human"
         self.score = 0
         self.size = random.randrange(35, 45)
         self.speed = random.randrange(35, 50)
@@ -240,7 +240,7 @@ class Cobra(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
-        self.name = "cobra"
+        self.name = "Cobra"
         self.score = 0
         self.size = random.randrange(60, 65)
         self.speed = random.randrange(25, 35)
@@ -256,7 +256,7 @@ class T_rex(Animal):
     def __init__(self):
         super().__init__()
         self.turn = 0
-        self.name = "t-rex"
+        self.name = "T-Rex"
         self.score = 0
         self.size = random.randrange(90, 100)
         self.speed = random.randrange(65, 75)
@@ -296,20 +296,19 @@ turn = 100
 
 def take_turn(animal1, animal2):
     winner = False
-    while not winner:
-        animal2.turn += animal2.speed
-        animal1.turn += animal1.speed
-        if animal1.turn >= 100:
-            number = random.randrange(100 - animal1.critical)
-            winner = fight(animal1, animal2, number)
-            animal1.turn -= 100
-        if animal2.turn >= 100:
-            number = random.randrange(100 - animal2.critical)
-            winner = fight(animal2, animal1, number)
-            animal2.turn -= 100
-        print(winner)
-        print(animal1.health)
-        print(animal2.health)
+    animal2.turn += animal2.speed
+    animal1.turn += animal1.speed
+    if animal1.turn >= 100:
+        number = random.randrange(100 - animal1.critical)
+        winner = fight(animal1, animal2, number)
+        animal1.turn -= 100
+    if animal2.turn >= 100:
+        number = random.randrange(100 - animal2.critical)
+        winner = fight(animal2, animal1, number)
+        animal2.turn -= 100
+    print(winner)
+    print(animal1.health)
+    print(animal2.health)
     return winner
 
 
@@ -342,13 +341,12 @@ else:
     defense.intelligence += 5
     winner = defense
 '''
-if __name__ == '__main__':
 
-    while not take_turn(lion, bear):
-        print("Lion: " + str(lion.health), "Bear: " + str(bear.health))
+while not take_turn(lion, bear):
+    print("Lion: " + str(lion.health), "Bear: " + str(bear.health))
 
 
-        # if weapon - armor is negative just set it to 0
-        # same with intelligece minus their intelligence
-        # incorporate intelligence with critical and having the possibility for the damage to not hit
-        # intelligence will increase with each win
+    # if weapon - armor is negative just set it to 0
+    # same with intelligece minus their intelligence
+    # incorporate intelligence with critical and having the possibility for the damage to not hit
+    # intelligence will increase with each win

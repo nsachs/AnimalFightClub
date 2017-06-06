@@ -22,7 +22,7 @@ class Bear(Animal):
         self.size = random.randrange(68, 78)
         self.speed = random.randrange(40, 50)
         self.health = 100
-        self.strength = random.randrange(67, 72)
+        self.strength = random.randrange(64, 74)
         self.weapon = random.randrange(67, 75)
         self.armor = random.randrange(61, 71)
         self.intelligence = random.randrange(31, 46)
@@ -38,7 +38,7 @@ class Lion(Animal):
         self.size = random.randrange(62, 72)
         self.speed = random.randrange(95, 100)
         self.health = 100
-        self.strength = random.randrange(80, 85)
+        self.strength = random.randrange(54, 64)
         self.weapon = random.randrange(80, 88)
         self.armor = random.randrange(40, 50)
         self.intelligence = random.randrange(43, 53)
@@ -54,7 +54,7 @@ class Wolverine(Animal):
         self.size = random.randrange(58,63)
         self.speed = random.randrange(40, 48)
         self.health = 100
-        self.strength = random.randrange(80, 85)
+        self.strength = random.randrange(21, 26)
         self.weapon = random.randrange(18, 25)
         self.armor = random.randrange(33, 43)
         self.intelligence = random.randrange(29, 39)
@@ -70,7 +70,7 @@ class Alligator(Animal):
         self.size = random.randrange(50, 60)
         self.speed = random.randrange(18, 28)
         self.health = 100
-        self.strength = random.randrange(80, 85)
+        self.strength = random.randrange(59, 69)
         self.weapon = random.randrange(43, 51)
         self.armor = random.randrange(90, 100)
         self.intelligence = random.randrange(31, 39)
@@ -86,7 +86,7 @@ class Black_cat(Animal):
         self.size = random.randrange(40, 47)
         self.speed = random.randrange(40, 48)
         self.health = 100
-        self.strength = random.randrange(80, 85)
+        self.strength = random.randrange(14, 21)
         self.weapon = random.randrange(10, 16)
         self.armor = random.randrange(17, 27)
         self.intelligence = random.randrange(55, 61)
@@ -102,7 +102,7 @@ class Dog(Animal):
         self.size = random.randrange(60, 65)
         self.speed = random.randrange(40, 65)
         self.health = 100
-        self.strength = random.randrange(80, 85)
+        self.strength = random.randrange(17, 27)
         self.weapon = random.randrange(18, 30)
         self.armor = random.randrange(25, 35)
         self.intelligence = random.randrange(38, 45)
@@ -118,7 +118,7 @@ class Porcupine(Animal):
         self.size = random.randrange(60, 65)
         self.speed = random.randrange(15, 25)
         self.health = 100
-        self.strength = random.randrange(80, 85)
+        self.strength = random.randrange(15, 25)
         self.weapon = random.randrange(25, 32)
         self.armor = random.randrange(60, 70)
         self.intelligence = random.randrange(28, 38)
@@ -134,7 +134,7 @@ class Gorilla(Animal):
         self.size = random.randrange(68, 78)
         self.speed = random.randrange(42, 49)
         self.health = 100
-        self.strength = random.randrange(80, 85)
+        self.strength = random.randrange(71, 81)
         self.weapon = random.randrange(28, 35)
         self.armor = random.randrange(62, 72)
         self.intelligence = random.randrange(82, 88)
@@ -149,7 +149,7 @@ class Black_panther(Animal):
         self.size = random.randrange(55, 65)
         self.speed = random.randrange(97,100)
         self.health = 100
-        self.strength = random.randrange(80, 85)
+        self.strength = random.randrange(44, 54)
         self.weapon = random.randrange(75, 85)
         self.armor = random.randrange(35, 45)
         self.intelligence = random.randrange(38, 45)
@@ -181,7 +181,7 @@ class Giraffe(Animal):
         self.size = random.randrange(55, 65)
         self.speed = random.randrange(35, 43)
         self.health = 100
-        self.strength = random.randrange(80, 85)
+        self.strength = random.randrange(33, 43)
         self.weapon = random.randrange(28, 35)
         self.armor = random.randrange(33, 43)
         self.intelligence = random.randrange(34, 43)
@@ -197,7 +197,7 @@ class Rhino(Animal):
         self.size = random.randrange(75, 85)
         self.speed = random.randrange(39, 49)
         self.health = 100
-        self.strength = random.randrange(80, 85)
+        self.strength = random.randrange(75, 85)
         self.weapon = random.randrange(50, 60)
         self.armor = random.randrange(80, 90)
         self.intelligence = random.randrange(38, 45)
@@ -213,7 +213,7 @@ class Bull(Animal):
         self.size = random.randrange(80, 89)
         self.speed = random.randrange(80, 89)
         self.health = 100
-        self.strength = random.randrange(80, 85)
+        self.strength = random.randrange(73, 83)
         self.weapon = random.randrange(37, 43)
         self.armor = random.randrange(66, 76)
         self.intelligence = random.randrange(21, 31)
@@ -229,7 +229,7 @@ class Human(Animal):
         self.size = random.randrange(35, 45)
         self.speed = random.randrange(35, 50)
         self.health = 100
-        self.strength = random.randrange(80, 85)
+        self.strength = random.randrange(27, 37)
         self.weapon = random.randrange(22, 28)
         self.armor = random.randrange(37, 47)
         self.intelligence = random.randrange(98, 100)
@@ -245,7 +245,7 @@ class Cobra(Animal):
         self.size = random.randrange(60, 65)
         self.speed = random.randrange(25, 35)
         self.health = 100
-        self.strength = random.randrange(80, 85)
+        self.strength = random.randrange(17, 22)
         self.weapon = random.randrange(34, 40)
         self.armor = random.randrange(26, 36)
         self.intelligence = random.randrange(25, 35)
@@ -261,7 +261,7 @@ class T_rex(Animal):
         self.size = random.randrange(90, 100)
         self.speed = random.randrange(65, 75)
         self.health = 100
-        self.strength = random.randrange(80, 85)
+        self.strength = random.randrange(90, 55)
         self.weapon = random.randrange(90, 95)
         self.armor = random.randrange(85, 95)
         self.intelligence = random.randrange(7, 13)
@@ -294,7 +294,7 @@ bear = Bear()
 turn = 100
 
 
-def take_turn(animal1, animal2):
+def take_turn(animal1, animal2, self):
     winner = False
     animal2.turn += animal2.speed
     animal1.turn += animal1.speed
@@ -309,7 +309,7 @@ def take_turn(animal1, animal2):
     print(winner)
     print(animal1.health)
     print(animal2.health)
-    return winner
+    return winner.name
 
 
 def fight(attack, defense, number):

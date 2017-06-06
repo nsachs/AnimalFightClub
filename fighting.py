@@ -261,7 +261,7 @@ class T_rex(Animal):
         self.size = random.randrange(90, 100)
         self.speed = random.randrange(65, 75)
         self.health = 100
-        self.strength = random.randrange(90, 95)
+        self.strength = random.randrange(90, 55)
         self.weapon = random.randrange(90, 95)
         self.armor = random.randrange(85, 95)
         self.intelligence = random.randrange(7, 13)
@@ -342,8 +342,6 @@ else:
     winner = defense
 '''
 
-while not take_turn(lion, bear):
-    print("Lion: " + str(lion.health), "Bear: " + str(bear.health))
 
 
     # if weapon - armor is negative just set it to 0

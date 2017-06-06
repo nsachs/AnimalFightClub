@@ -2,7 +2,7 @@ import tkinter as tk
 from PIL import ImageTk, Image
 import time
 from tkinter import *
-
+from fighting import *
 root = Tk()
 
 
@@ -15,7 +15,7 @@ def mainfunction():
     height = 900
     canvas = Canvas(width=width, height=height)
     canvas.pack()
-    widthrect = 200
+    widthrect = 300
     widthrect2=600
     number = 100
     number2=number
@@ -33,7 +33,7 @@ def mainfunction():
     for k in range(1000):
         for gif in giflist:
             canvas.delete(ALL)
-            x = canvas.create_rectangle(0, 65, widthrect+100, 25, fill="red")
+            x = canvas.create_rectangle(0, 65, widthrect, 25, fill="red")
             y = canvas.create_rectangle(900, 65, widthrect2, 25, fill="red")
             canvas.create_text(880, 50, fill="orange", font="Times 20 italic bold",
                                text=str(number2))
@@ -52,7 +52,7 @@ def mainfunction():
             time.sleep(1)
         for gif2 in giflist2:
             canvas.delete(ALL)
-            x = canvas.create_rectangle(0, 65, widthrect+100, 25, fill="red")
+            x = canvas.create_rectangle(0, 65, widthrect, 25, fill="red")
             y = canvas.create_rectangle(900, 65, widthrect2, 25, fill="red")
             canvas.create_text(20, 50, fill="orange", font="Times 20 italic bold",
                                text=str(number))

@@ -12,7 +12,7 @@ identifier = 'AKfycbydbjC47B3VQQSz_YyaKYMGKr_J11EgsL5upH3A1oPQvSRKncvP'
 url = 'https://script.google.com/macros/s/' + identifier + '/exec?'
 
 from urllib import request
-
+from urllib import parse
 
 def get_scores():
     """
@@ -34,7 +34,7 @@ def post_score(score, name):
     :param name: 
     :return: gs result
     """
-    with request.urlopen(url + "type=post&score=" + str(score) + "&name=" + name.replace(" ", "_")) as response:
+    with request.urlopen(url + "type=post&score=" + str(score) + "&name=" + parse.quote(name)) as response:
         print(response.read())
 
 

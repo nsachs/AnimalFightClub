@@ -15,8 +15,8 @@ def mainfunction():
     height = 900
     canvas = Canvas(width=width, height=height)
     canvas.pack()
-    widthrect = 300
-    widthrect2=600
+    widthrect = 200+animal1.health
+    widthrect2=500-animal2.health
     number = 100
     number2=number
     moveimg = -40
@@ -42,8 +42,7 @@ def mainfunction():
             canvas.create_image((width / 6.0) * 5, height / 2.0, image=giflist2[0])
             canvas.create_image(width / 6.0 + moveimg+20, height / 2.0, image=gif)
             root.after(40)
-            widthrect2+=4
-            number2 -= 2
+            number2 = animal2.health
             moveimg *= -1
            # if number2==0:
                # canvas.create_text(20, 50, fill="orange", font="Times 20 italic bold",
@@ -61,8 +60,7 @@ def mainfunction():
             canvas.create_image(width / 6.0 , height / 2.0, image=giflist[0])
             canvas.create_image((width/6.0)*5 - moveimg, height / 2.0, image=gif2)
             root.after(40)
-            widthrect -= 4
-            number -= 50
+            number -=animal1.health
             moveimg *= -1
            # if number==0:
                 #canvas.create_text(20, 50, fill="orange", font="Times 20 italic bold",

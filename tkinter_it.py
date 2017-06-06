@@ -13,6 +13,7 @@ class Animals():
         animal_2 = random.randrange(len(animal_list))
         animal2 = animal_list[animal_2]
         #del(animal_list[animal2])
+        print(animal1)
 
         #Title
         self.title_font = font.Font(family="Courier New", size=30, weight = font.BOLD, underline = 2)
@@ -56,7 +57,7 @@ class Animals():
 
         #Fight button/send fight
         self.fight_button = font.Font(family = "Courier New", size = 15, weight = font.BOLD)
-        self.fight_button = Button(master, text = "FIGHT!", fg = "purple", command = lambda:fighting(animal1[1], animal2[1]))
+        self.fight_button = Button(master, text = "FIGHT!", fg = "purple", command = lambda:fighting(animal_list[animal_list.index(animal1)][1], animal_list[animal_list.index(animal2)][1]))
         self.fight_button.grid(row = 7, column = 3, columnspan = 2)
 
         '''
@@ -66,10 +67,10 @@ class Animals():
             winner = animal_2[0]
             
         '''
-        winner = ""
+        winner_text = ""
 
         #List of winner and stats/ grab stats and winner
-        self.victor = Label(master, text = winner)
+        self.victor = Label(master, textvariable = winner_text)
         self.victor.grid(row = 8, column = 1, columnspan = 3)
 
         #Play again button
@@ -78,7 +79,8 @@ class Animals():
         self.restart_button.grid(row = 8, column = 4)
 
         def fighting(animal1, animal2):
-            winner = "You are correct" + take_turn(animal1[1], animal2[1]) + "Wins!"
+            winner_text = "You are correct!  " + str(take_turn(animal1, animal2).name) + " Wins!"
+            print(winner_text)
 
 
 if __name__ == "__main__":

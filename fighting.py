@@ -296,19 +296,20 @@ turn = 100
 
 def take_turn(animal1, animal2):
     winner = False
-    animal2.turn += animal2.speed
-    animal1.turn += animal1.speed
-    if animal1.turn >= 100:
-        number = random.randrange(100 - animal1.critical)
-        winner = fight(animal1, animal2, number)
-        animal1.turn -= 100
-    if animal2.turn >= 100:
-        number = random.randrange(100 - animal2.critical)
-        winner = fight(animal2, animal1, number)
-        animal2.turn -= 100
-    print(winner)
-    print(animal1.health)
-    print(animal2.health)
+    while not winner:
+        animal2.turn += animal2.speed
+        animal1.turn += animal1.speed
+        if animal1.turn >= 100:
+            number = random.randrange(100 - animal1.critical)
+            winner = fight(animal1, animal2, number)
+            animal1.turn -= 100
+        if animal2.turn >= 100:
+            number = random.randrange(100 - animal2.critical)
+            winner = fight(animal2, animal1, number)
+            animal2.turn -= 100
+        print(winner)
+        print(animal1.health)
+        print(animal2.health)
     return winner
 
 
@@ -341,12 +342,13 @@ else:
     defense.intelligence += 5
     winner = defense
 '''
+if __name__ == '__main__':
 
-while not take_turn(lion, bear):
-    print("Lion: " + str(lion.health), "Bear: " + str(bear.health))
+    while not take_turn(lion, bear):
+        print("Lion: " + str(lion.health), "Bear: " + str(bear.health))
 
 
-    # if weapon - armor is negative just set it to 0
-    # same with intelligece minus their intelligence
-    # incorporate intelligence with critical and having the possibility for the damage to not hit
-    # intelligence will increase with each win
+        # if weapon - armor is negative just set it to 0
+        # same with intelligece minus their intelligence
+        # incorporate intelligence with critical and having the possibility for the damage to not hit
+        # intelligence will increase with each win
